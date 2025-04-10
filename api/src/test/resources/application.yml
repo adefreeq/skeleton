@@ -1,0 +1,12 @@
+spring:
+    profiles:
+        active: qa
+---
+spring:
+    config:
+        activate:
+            on-profile: qa
+
+api:
+    base:
+        uri: https://reqres.in
