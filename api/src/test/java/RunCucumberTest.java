@@ -6,10 +6,14 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"classpath:features"},
         glue = {"steps", "context"},
-        plugin = {"pretty", "html:target/cucumber-reports"},
+        plugin = {
+                "pretty",
+                "html:target/cucumber-reports/html",
+                "json:target/cucumber-reports/cucumber.json"
+        },
         monochrome = true,
         publish = true,
-        tags = "@demo"
+        tags = "@regression"
 )
 public class RunCucumberTest {
 }

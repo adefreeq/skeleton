@@ -5,6 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-@ComponentScan(basePackages = {"context", "services", "steps"})
+@ComponentScan(basePackages = {"context", "service", "steps"})
 public class TestApplication {
 }

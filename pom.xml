@@ -20,7 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cucumber.version>7.19.0</cucumber.version>
         <rest-assured.version>5.0.0</rest-assured.version>
-        <spring.boot.version>3.0.5</spring.boot.version>
+        <spring.boot.version>2.7.13</spring.boot.version>
         <junit.version>4.13.2</junit.version>
         <slf4j.version>2.0.7</slf4j.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
@@ -29,6 +29,9 @@
         <log4j.version>2.24.1</log4j.version>
         <lombok.version>1.18.28</lombok.version>
         <assertj.version>3.6.2</assertj.version>
+        <jackson.version>2.15.3</jackson.version>
+        <spring-hateoas.version>1.5.3</spring-hateoas.version>
+        <spring.context.version>5.3.22</spring.context.version>
     </properties>
 
     <dependencyManagement>
@@ -111,6 +114,31 @@
                 <artifactId>activation</artifactId>
                 <version>${activation.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.hateoas</groupId>
+                <artifactId>spring-hateoas</artifactId>
+                <version>${spring-hateoas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.context.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -150,3 +178,4 @@
         </pluginManagement>
     </build>
 </project>
+
