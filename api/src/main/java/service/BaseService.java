@@ -39,7 +39,8 @@ public class BaseService {
         return given()
                 .spec(builder.build())
                 .header("X-Requested-With", "XMLHttpRequest")
-                .header("Content-Type", "application/json");
+                .header("Content-Type", "application/json")
+                .header("x-api-key", "reqres-free-v1");
     }
 
     public void setUpRestAssuredObjectMapper() {
