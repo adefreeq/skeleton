@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"classpath:features"},
-        glue = {"steps", "context"},
+        glue = {"context", "ui"},
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/html",
