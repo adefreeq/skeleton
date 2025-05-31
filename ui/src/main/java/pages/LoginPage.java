@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
+    private WebDriver driver;
+    private final String url = "https://www.saucedemo.com/";
+
     @FindBy(id = "user-name")
     private WebElement usernameInput;
 
@@ -16,24 +19,28 @@ public class LoginPage {
     @FindBy(id = "login-button")
     private WebElement loginButton;
 
-    private final WebDriver driver;
-
     public LoginPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public void enterUsername(String username) {
-        usernameInput.clear();
+    public LoginPage navigateToLoginPage() {
+        driver.get(url);
+        return this;
+    }
+
+    public LoginPage withUsername(String username) {
         usernameInput.sendKeys(username);
+        return this;
     }
 
-    public void enterPassword(String password) {
-        passwordInput.clear();
+    public LoginPage withPassword(String password) {
         passwordInput.sendKeys(password);
+        return this;
     }
 
-    public void clickLogin() {
+    public LoginPage login() {
         loginButton.click();
+        return this;
     }
 }

@@ -26,19 +26,17 @@ public class LoginSteps {
 
     @Given("the user navigates to the login page")
     public void the_user_navigates_to_the_login_page() {
-        driver.get("https://www.saucedemo.com/");
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage(driver).navigateToLoginPage();
     }
 
     @When("the user enters username {string} and password {string}")
     public void the_user_enters_username_and_password(String username, String password) {
-        loginPage.enterUsername(username);
-        loginPage.enterPassword(password);
+        loginPage.withUsername(username).withPassword(password);
     }
 
     @And("clicks the login button")
     public void clicks_the_login_button() {
-        loginPage.clickLogin();
+        loginPage.login();
     }
 
     @Then("the user should be redirected to the inventory page")
