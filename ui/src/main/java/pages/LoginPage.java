@@ -5,9 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
-    private WebDriver driver;
     private final String url = "https://www.saucedemo.com/";
 
     @FindBy(id = "user-name")
@@ -20,12 +19,16 @@ public class LoginPage {
     private WebElement loginButton;
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
+    }
+
+    @Override
+    public String getPageUrl() {
+        return url;
     }
 
     public LoginPage navigateToLoginPage() {
-        driver.get(url);
+        navigateToPage(url);  // Use the method name from BasePage
         return this;
     }
 
