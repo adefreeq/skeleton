@@ -6,5 +6,5 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 @CucumberContextConfiguration
 @ContextConfiguration(classes = SpringConfig.class, loader = AnnotationConfigContextLoader.class)
-public class CucumberSpringConfiguration {
+public class CucumberContext {
 }
