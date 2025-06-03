@@ -1,6 +1,6 @@
 package steps;
 
-import context.CucumberLifecycleHooks;
+import context.CucumberHooks;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class LoginSteps {
 
     @Autowired
-    private CucumberLifecycleHooks hooks;
+    private CucumberHooks hooks;
 
     private LoginPage loginPage;
     private WebDriver driver;

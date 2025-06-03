@@ -3,6 +3,7 @@ package context;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -10,7 +11,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 @Slf4j
-public class CucumberLifecycleHooks {
+@Getter
+public class CucumberHooks {
+
     private WebDriver webDriver;
 
     @Before
@@ -29,10 +32,6 @@ public class CucumberLifecycleHooks {
             scenario.attach(src, "image/png", "screenshot");
         }
         log.info("Quitting current webdriver...");
-        webDriver.quit();
-    }
-
-    public WebDriver getWebDriver() {
-        return webDriver;
+        //webDriver.quit();
     }
 }
