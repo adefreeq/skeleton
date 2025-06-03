@@ -10,18 +10,20 @@ import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
+import org.springframework.beans.factory.annotation.Autowired;
 import pages.LoginPage;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
 public class LoginSteps {
 
-    private WebDriver driver;
+    private final WebDriver driver;
     private LoginPage loginPage;
 
-    @Before
-    public void setup() {
-        driver = WebDriverFactory.getDriver("chrome");
-        driver.manage().window().maximize();
+    @Autowired
+    public LoginSteps(WebDriver driver) {
+        this.driver = driver;
     }
 
     @Given("the user navigates to the login page")
@@ -42,13 +44,6 @@ public class LoginSteps {
     @Then("the user should be redirected to the inventory page")
     public void the_user_should_be_redirected_to_the_inventory_page() {
         String currentUrl = driver.getCurrentUrl();
-        Assertions.assertThat(currentUrl).contains("/inventory.html");
-    }
-
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            //driver.quit();
-        }
+        assertThat(currentUrl).contains("/inventory.html");
     }
 }
