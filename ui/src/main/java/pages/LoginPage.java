@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage navigateToLoginPage() {
-        navigateToPage(url);  // Use the method name from BasePage
+        navigateToPage(url);
         return this;
     }
 
