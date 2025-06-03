@@ -7,22 +7,16 @@ import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 @Slf4j
 public class CucumberLifecycleHooks {
-
-    private final WebDriver webDriver;
-
-    @Autowired
-    public CucumberLifecycleHooks(WebDriver webDriver) {
-        this.webDriver = webDriver;
-    }
+    private WebDriver webDriver;
 
     @Before
     public void before() {
         log.info("Starting Cucumber in Spring Context");
+        webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
     }
 
@@ -35,6 +29,10 @@ public class CucumberLifecycleHooks {
             scenario.attach(src, "image/png", "screenshot");
         }
         log.info("Quitting current webdriver...");
-        //webDriver.quit();
+        webDriver.quit();
+    }
+
+    public WebDriver getWebDriver() {
+        return webDriver;
     }
 }

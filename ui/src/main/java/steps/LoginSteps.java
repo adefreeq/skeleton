@@ -1,14 +1,11 @@
 package steps;
 
-import drivers.WebDriverFactory;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import context.CucumberLifecycleHooks;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
-import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import pages.LoginPage;
@@ -18,17 +15,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Slf4j
 public class LoginSteps {
 
-    private final WebDriver driver;
-    private LoginPage loginPage;
-
     @Autowired
-    public LoginSteps(WebDriver driver) {
-        this.driver = driver;
-    }
+    private CucumberLifecycleHooks hooks;
+
+    private LoginPage loginPage;
+    private WebDriver driver;
 
     @Given("the user navigates to the login page")
-    public void the_user_navigates_to_the_login_page() {
-        loginPage = new LoginPage(driver).navigateToLoginPage();
+    public void i_am_on_the_login_page() {
+        driver = hooks.getWebDriver();
+        loginPage = new LoginPage(driver);
+        loginPage.navigateToLoginPage();
     }
 
     @When("the user enters username {string} and password {string}")
