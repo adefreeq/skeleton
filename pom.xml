@@ -26,7 +26,7 @@
         <jaxb.api.version>2.3.1</jaxb.api.version>
         <jaxb.runtime.version>2.3.5</jaxb.runtime.version>
         <activation.version>1.1.1</activation.version>
-        <log4j.version>2.24.1</log4j.version>
+        <log4j.version>2.22.1</log4j.version>
         <lombok.version>1.18.28</lombok.version>
         <assertj.version>3.6.2</assertj.version>
         <jackson.version>2.15.3</jackson.version>
@@ -78,9 +78,8 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-slf4j-impl</artifactId>
+                <artifactId>log4j-api</artifactId>
                 <version>${log4j.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
@@ -88,9 +87,9 @@
                 <version>${log4j.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j2-impl</artifactId>
+                <version>${log4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
