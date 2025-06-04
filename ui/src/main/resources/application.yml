@@ -1,2 +1,1 @@
-browser: chrome
-baseUrl: http://localhost:8080
+loginUrl: https://www.saucedemo.com/

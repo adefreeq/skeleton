@@ -3,11 +3,14 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class LoginPage extends BasePage {
 
-    private final String url = "https://www.saucedemo.com/";
+    @Value("${loginUrl}")
+    private String url;
 
     @FindBy(id = "user-name")
     private WebElement usernameInput;

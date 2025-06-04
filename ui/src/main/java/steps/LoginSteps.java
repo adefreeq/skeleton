@@ -18,13 +18,14 @@ public class LoginSteps {
     @Autowired
     private CucumberHooks hooks;
 
+    @Autowired
     private LoginPage loginPage;
+
     private WebDriver driver;
 
     @Given("the user navigates to the login page")
     public void i_am_on_the_login_page() {
         driver = hooks.getWebDriver();
-        loginPage = new LoginPage(driver);
         loginPage.navigateToLoginPage();
     }
 
