@@ -24,24 +24,29 @@ public class LoginSteps {
     private WebDriver driver;
 
     @Given("the user navigates to the login page")
-    public void i_am_on_the_login_page() {
+    public void navigateToLoginPage() {
+        log.info("Step: Navigating to login page");
         driver = hooks.getWebDriver();
         loginPage.navigateToLoginPage();
     }
 
     @When("the user enters username {string} and password {string}")
-    public void the_user_enters_username_and_password(String username, String password) {
+    public void enterLoginCredentials(String username, String password) {
+        log.info("Step: Entering credentials: username={}, password={}", username, password);
         loginPage.withUsername(username).withPassword(password);
     }
 
     @And("clicks the login button")
-    public void clicks_the_login_button() {
+    public void login() {
+        log.info("Step: Clicking login button");
         loginPage.login();
     }
 
     @Then("the user should be redirected to the inventory page")
-    public void the_user_should_be_redirected_to_the_inventory_page() {
+    public void verifyLogin() {
+        log.info("Step: Verifying redirection to inventory page");
         String currentUrl = driver.getCurrentUrl();
+        log.info("Current URL: {}", currentUrl);
         assertThat(currentUrl).contains("/inventory.html");
     }
 }
