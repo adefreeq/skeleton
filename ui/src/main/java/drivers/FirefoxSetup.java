@@ -7,13 +7,14 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class FirefoxSetup {
 
-    public static WebDriver create() {
+    public static WebDriver create(boolean headless) {
         WebDriverManager.firefoxdriver().setup();
-
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--start-maximized");
-        options.addArguments("--disable-infobars");
-        options.addArguments("--disable-notifications");
+        options.addArguments("--start-maximized", "--disable-infobars", "--disable-notifications");
+
+        if (headless) {
+            options.addArguments("--headless");
+        }
 
         return new FirefoxDriver(options);
     }

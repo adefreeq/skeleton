@@ -1,13 +1,13 @@
 package context;
 
+import drivers.DriverConfig;
 import org.openqa.selenium.WebDriver;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import pages.LoginPage;
 
 @Configuration
-@EnableConfigurationProperties
+@EnableConfigurationProperties(DriverConfig.class)
 @PropertySource("classpath:application.yml")
 @ComponentScan(basePackages = {"pages", "steps", "context"})
 public class SpringConfig {

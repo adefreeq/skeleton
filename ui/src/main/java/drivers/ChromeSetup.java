@@ -7,13 +7,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class ChromeSetup {
 
-    public static WebDriver create() {
+    public static WebDriver create(boolean headless) {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
-        options.addArguments("--disable-infobars");
-        options.addArguments("--disable-notifications");
-        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--disable-infobars", "--disable-notifications", "--remote-allow-origins=*");
+
+        if (headless) {
+            options.addArguments("--headless=new");
+        }
+
         return new ChromeDriver(options);
     }
 }

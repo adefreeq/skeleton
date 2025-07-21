@@ -1,1 +1,4 @@
 loginUrl: https://www.saucedemo.com/
+
+browser: firefox
+headless: true
