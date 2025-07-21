@@ -1,0 +1,13 @@
+platform: android
+
+android:
+  app: /Users/ade/skeleton/mobile/src/main/resources/apps/mda-2.2.0-25.apk
+  deviceName: Pixel 6
+  platformVersion: 12
+  automationName: UiAutomator2
+
+ios:
+  app: /Users/ade/skeleton/mobile/src/main/resources/apps/SwagLabsMobileApp.app andr
+  deviceName: iPhone 15 Pro
+  platformVersion: 18.5
+  automationName: XCUITest

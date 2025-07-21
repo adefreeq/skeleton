@@ -70,11 +70,7 @@
             <artifactId>selenium-firefox-driver</artifactId>
             <version>4.20.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-devtools-v103</artifactId>
-            <version>4.3.0</version>
-        </dependency>
+
 
         <!-- Others -->
         <dependency>
