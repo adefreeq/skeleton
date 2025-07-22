@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class ProductPage extends BasePage {
 
-    @Value("${urls.product:https://www.saucedemo.com/inventory.html}")
+    @Value("${productUrl}")
     private String url;
 
     @FindBy(xpath = "//span[@class='title']")

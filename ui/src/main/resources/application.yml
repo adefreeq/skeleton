@@ -1,5 +1,5 @@
-urls:
-  product: https://www.saucedemo.com/inventory.html
+
+productUrl: https://www.saucedemo.com/inventory.html
 loginUrl: https://www.saucedemo.com/
 browser: chrome
 headless: false
