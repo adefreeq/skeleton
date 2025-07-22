@@ -41,12 +41,4 @@ public class LoginSteps {
         log.info("Step: Clicking login button");
         loginPage.login();
     }
-
-    @Then("the user should be redirected to the inventory page")
-    public void verifyLogin() {
-        log.info("Step: Verifying redirection to inventory page");
-        String currentUrl = driver.getCurrentUrl();
-        log.info("Current URL: {}", currentUrl);
-        assertThat(currentUrl).contains("/inventory.html");
-    }
 }

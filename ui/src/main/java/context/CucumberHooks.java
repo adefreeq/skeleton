@@ -35,6 +35,6 @@ public class CucumberHooks {
             scenario.attach(src, "image/png", "screenshot");
         }
         log.info("Quitting current webdriver...");
-        //webDriver.quit();
+        webDriver.quit();
     }
 }
