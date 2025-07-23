@@ -26,11 +26,9 @@ public class ProductSteps {
 
     @Then("the user should be redirected to the inventory page")
     public void verifyLogin() {
-        log.info("Step: Verifying redirection to inventory page");
         String currentUrl = driver.getCurrentUrl();
         String expectedUrl = productPage.getPageUrl();
-        log.info("Current URL: {}", currentUrl);
-        log.info("Expected URL: {}", expectedUrl);
+        log.info("Step: Verifying redirection to inventory page | Current URL: {} | Expected URL: {}", currentUrl, expectedUrl);
         assertThat(currentUrl).isEqualTo(expectedUrl);
     }
 }

@@ -3,14 +3,11 @@ package steps;
 import context.CucumberHooks;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import pages.LoginPage;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
 public class LoginSteps {

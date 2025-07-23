@@ -9,5 +9,5 @@ Feature: Login to SauceDemo application
     And clicks the login button
     Then the user should be redirected to the inventory page
 
-  Scenario: Successful login with standard user
+  Scenario: Verify product inventory page
     Then the user should be redirected to the inventory page
