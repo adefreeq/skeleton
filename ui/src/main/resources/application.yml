@@ -1,5 +1,8 @@
-
+# URLs
 productUrl: https://www.saucedemo.com/inventory.html
 loginUrl: https://www.saucedemo.com/
+
+# Browser
 browser: chrome
 headless: false
+
